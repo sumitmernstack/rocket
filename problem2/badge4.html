@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.notification {
+  background-color: #ffffff;
+  color: white;
+  text-decoration: none;
+  padding: 15px 26px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+.notification .size{
+ width:100px,
+ height:100px
+ }
+
+.notification .badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  padding: 5px 10px;
+  border-radius: 50%;
+  background-color: #373737;
+  color: white;
+}
+</style>
+  <script>
+  function imgloop()
+  {
+    var ar = ["10","10","10","10","20","30","30","30","30","30","30","30","40","40","40","40","40"];
+    for (i = 0; ar.length > i; i++)
+    {
+      var img = new Image(200, 200);
+	  img.width=100;
+	  img.height=100;
+      img.src = ar[i]+".jpg";
+
+      var src = document.getElementById("elementid");
+      src.appendChild(img);
+    }
+	
+	
+	
+	
+	
+	var arr=['d10',"d30","d40"];
+	var badge=["2","2","3"];
+	var text = "";
+	 for (i = 0; arr.length > i; i++)
+    {
+      var img = new Image(200, 200);
+	  img.width=100;
+	  img.height=100;
+      img.src = arr[i]+".jpg";
+	
+      var src = document.getElementById("elementidpair");
+      src.appendChild(img);
+	     text += badge[i];
+		 
+    }document.getElementById("demo").innerHTML = text;
+  }
+    
+</script>
+</head>
+<body onload="imgloop()">
+  <h1>input</h1>
+  <div id="elementid"> </div>
+ 
+  <h1>output</h1>
+<a href="#" id="demo1" class="notification">
+  <span id="elementidpair"></span>
+  <span  id="demo" class="badge">
+  <script>
+  var badge=["2","2","3"];
+  for (i = 0; badge.length > i; i++){
+ console.log(badge[i])
+  }
+  </script></span>
+</a>
+</body>
+</html>
